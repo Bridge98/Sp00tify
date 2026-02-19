@@ -23,7 +23,7 @@ How the upload works:
     * title
     * genre
 
-!!! ## Next Updates needed:
+Next Updates needed:
   🎚️ **(AAA) Auto Audio Analysis**
     * BPM detection
     * Key detection
