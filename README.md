@@ -24,24 +24,24 @@ How the upload works:
     * genre
 
 Next Updates needed:
-  🎚️ **(AAA) Auto Audio Analysis**
+  * 🎚️ **(AAA) Auto Audio Analysis**
     * BPM detection
     * Key detection
     * Loudness normalization (LUFS)
     * Waveform preview
     * Workflow: Upload Evento Kafka Microservizio analizza file Salva metadata audio nel DB
-  🎛️ **Loudness normalization**
+  * 🎛️ **Loudness normalization**
     * Normalization around -14 LUFS.
     * ffmpeg
     * Essentia
     * librosa (Python microservice)
-  🔐 **Security**
+  * 🔐 **Security**
     * JWT with Spring Security
     * upload size limitation
     * MIME type validation
     * Scan antivirus (optional)
     * Rate limiting
-  🧱 **Evolution (production-grade)**
+  * 🧱 **Evolution (production-grade)**
     * API Gateway
     * Microservices: auth-service, track-service, streaming-service
     * CDN Audio
