@@ -1,0 +1,33 @@
+"use client";
+
+import { useState } from "react";
+import axios from "axios";
+
+export default function UploadPage() {
+
+  const [file, setFile] = useState<File | null>(null);
+  const [cover, setCover] = useState<File | null>(null);
+
+  const handleUpload = async () => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("cover", cover);
+    formData.append("title", "My Track");
+    formData.append("genre", "Techno");
+
+    await axios.post("http://localhost:8080/api/tracks/upload", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    });
+  };
+
+  return (
+    <div>
+      <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+      <input type="file" onChange={(e) => setCover(e.target.files[0])} />
+      <button onClick={handleUpload}>Upload</button>
+    </div>
+  );
+}

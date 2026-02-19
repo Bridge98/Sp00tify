@@ -1,0 +1,7 @@
+export function AudioPlayer({ url }: { url: string }) {
+  return (
+    <audio controls>
+      <source src={url} type="audio/mpeg" />
+    </audio>
+  );
+}
